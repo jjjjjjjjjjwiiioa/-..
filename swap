@@ -8,7 +8,7 @@
 //传址调用
 //函数与函数外部的变量建立起 真正的联系，也就是函数内部可以直接操作函数外部的变量
 #include<stdio.h>
-swap(int* pa, int* pb )
+void swap(int* pa, int* pb )
 {
     int tmp = 0;
     tmp= *pa;
