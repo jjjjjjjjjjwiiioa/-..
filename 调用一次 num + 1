@@ -1,0 +1,20 @@
+#include<stdio.h>
+//本质就是 函数内部直接操作函数外部
+
+void Add(int* pnum)
+{
+    (*pnum)++;   //涉及优先级 故要加小括号
+}
+int main()
+{
+    int num = 0;
+    Add(&num);
+    printf("%d", num);
+    Add(&num);
+    printf("%d", num);
+    Add(&num);
+    printf("%d", num);
+
+
+    return 0;
+}
