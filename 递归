@@ -1,0 +1,20 @@
+//递归的两个必要条件
+//1. 存在限制条件，当满足限制条件，递归不再继续
+//2.每次递归调用后越来越接近递归条件
+
+#include<stdio.h>
+void print(int num)
+{
+    if(num > 9)
+    {
+        print(num/10);
+    }
+    printf("%d ", num%10);
+}
+int main()
+{
+    unsigned int num = 0;
+    scanf("%d", &num);
+    print(num);
+    return 0;
+}
