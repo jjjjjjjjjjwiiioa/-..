@@ -1,0 +1,33 @@
+#include<stdio.h>
+void shellSort(int* a, int len)
+{
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int tmp = 0;
+    int gap = 0;
+    for(gap = len/2; gap>0; gap/=2)
+        for(i = 0; i<gap; i++)
+            for(j = i+gap; j<len; j+=gap)
+            {
+                tmp = a[j];
+                k = j -gap;
+                while(k>=0 && tmp < a[k])
+                {
+                    a[k+gap] = a[k];
+                    k-=gap;
+                }
+                a[k+gap] = tmp;
+            }
+}
+int main()
+{
+    int arr[10] = {9,8,4,1,5,6,3,2,7};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    shellSort(arr,len);
+    for(int i = 0; i<len; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
