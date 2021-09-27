@@ -1,0 +1,20 @@
+//计算a^b
+//b用二进制位表示
+//a^b就变成  
+//
+
+#include<stdio.h>
+int power(int a, int b)
+{
+    int ret = 1;//用ret 记录值
+    while(b)
+    {
+        if(b%2 == 1)//判断二进制位是" 0 "还是" 1 "
+        {
+            ret = ret*a;//如果是" 1 "，乘上
+        }
+        a = a*a;//a二进制位的推进而改变
+        b/2;//b看成二进制位，相当于右移一个
+    }
+    return ret;
+}
