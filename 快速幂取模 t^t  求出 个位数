@@ -1,0 +1,30 @@
+(a + b) % p = (a % p + b % p) % p （1）
+
+(a - b) % p = (a % p - b % p ) % p （2）
+
+(a * b) % p = (a % p * b % p) % p （3）
+#include<stdio.h>
+long long fastPower(int base, int power)
+{
+    long long result = 1;
+    base%=10;
+    while(power >0)
+    {
+        if(power & 1)//此处等价于power %2 == 1
+        {
+            result= result * base %10;
+        }
+        power >>= 1;
+        base = (base * base) % 10;
+    }
+    return result;
+}
+int main()
+{
+    long long int t = 0;
+    while(~scanf("%lld", &t))
+    {
+        printf("%lld\n",fastPower(t,t));
+    }
+    return 0;
+}
