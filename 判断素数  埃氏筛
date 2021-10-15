@@ -1,0 +1,36 @@
+#include<stdio.h>
+int vis[10000005];
+int prime[1000005];
+int Sieve(int n)
+{
+    int i,j,k;
+    k=0;
+    vis[0]=vis[1]=1;
+    for(i=2;i<=n;i++)//
+    {
+        if(vis[i]==0)//能进来的i都是素数
+        {
+            prime[k++]=i;
+            for(j=i;i*j<=n;j++)//仅仅是这里，把j=2改为j=i   构造出所有合数
+                vis[i*j]=1;
+        }
+    }
+    return k;
+}
+int main()
+{
+    int n = 0;
+    Sieve(10000000);
+    while(~scanf("%d", &n))
+    {
+        if(vis[n] == 0)
+        {
+            printf("Yes\n");
+        }
+        else
+        {
+            printf("No\n");
+        }
+    }
+    return 0;
+}
