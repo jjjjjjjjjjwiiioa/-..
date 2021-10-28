@@ -1,0 +1,22 @@
+http://www.cnblogs.com/qswg/p/6251887.html
+
+此时分界线在靠右
+//当找不到时，left表示第一个小于查找数k的坐标，right表示第一个大于查找树k的坐标
+
+int search(int* a, int k, int len)
+{
+    int left = -1;
+    int right = len;
+    while(left+1 < right)
+    {
+        int mid = (left + right)/2;
+        if(a[mid] <= k)
+        {
+            left = mid;
+        }
+        else
+        {
+            right = mid;
+        }
+    }
+}
