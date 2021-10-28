@@ -1,0 +1,23 @@
+http://www.cnblogs.com/qswg/p/6251887.html
+
+left表示序列的最右端
+right表示序列的最右端
+
+#include<stdio.h>
+int search(int* a, int k, int len)
+{
+    int left = -1;
+    int right = len;
+    while(left+1 < right)
+    {
+        int mid = (left + right)/2;
+        if(a[mid] <= k)
+        {
+            left = mid;
+        }
+        else
+        {
+            right = mid;
+        }
+    }
+}
