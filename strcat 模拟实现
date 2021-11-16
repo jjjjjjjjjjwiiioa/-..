@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<assert.h>
+void mystrcat(char* str1, const char* str2)
+{
+    assert(str1 != NULL);
+    assert(str2 != NULL);
+    while(*str1 != '\0')
+    {
+        str1++;
+    }
+    while(*str2 != '\0')
+    {
+        *str1 = *str2;
+        str1++;
+        str2++;
+    }
+}
+int main()
+{
+    char a[100] = {"You are"};
+    char b[] = {" my hero"};
+    mystrcat(a, b);
+    printf("%s", a);
+    return 0;
+}
